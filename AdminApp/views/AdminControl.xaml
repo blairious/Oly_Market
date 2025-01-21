@@ -35,5 +35,10 @@
         <Button x:Name="AdjustFunds" Content="Adjust Funds" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
         <Button x:Name="VendorAccounts" Content="Vendor Accounts" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
         <Button x:Name="SignOut" Content="Sign Out" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <DataGrid Grid.Column="2" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=6}" Grid.ColumnSpan="6" Margin="0,0,26,31" Grid.RowSpan="9" SelectionChanged="DataGrid_SelectionChanged"/>
+        <TextBlock Text="Transaction Ledger:" FontSize="16" FontWeight="Bold" Grid.Column="2" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Data Lookup" Width="319" Foreground="Gray"/>
+        <TextBox Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Month" Width="140" Foreground="Gray"/>
+        <TextBox Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Year" Width="140" Foreground="Gray"/>
     </Grid>
 </Window>
