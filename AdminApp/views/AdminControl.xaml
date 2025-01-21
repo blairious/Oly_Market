@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminApp.views"
         mc:Ignorable="d"
-        Title="AdminControl" Height="450" Width="800">
+        Title="AdminControl" Height="600" Width="950">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width=".1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width=".1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="2" Grid.RowSpan="4" Source="/images/olymarketlogo.png" Stretch="Fill"/>
+        <Button x:Name="CreateCard" Content="Create Gift Card" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="AdjustFunds" Content="Adjust Funds" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="VendorAccounts" Content="Vendor Accounts" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="SignOut" Content="Sign Out" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="160" Grid.ColumnSpan="2" Height="31" Background="#FF155244" Foreground="White" FontWeight="Bold" FontSize="16"/>
     </Grid>
 </Window>

@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminApp"
         mc:Ignorable="d"
-        Title="Oly Market Login" Height="550" Width="300">
+        Title="Oly Market Login" Height="600" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3.5*"/>
+            <RowDefinition Height=".5*"/>
             <RowDefinition Height=".5*"/>
             <RowDefinition Height=".5*"/>
             <RowDefinition Height=".5*"/>
@@ -18,9 +19,10 @@
 
         <Image Grid.Row="0" Source="/images/olymarketlogo.png" Stretch="Fill"/>
         <PasswordBox HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="206" Height="37" FontSize="16" HorizontalContentAlignment="Center"/>
-        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="40" Width="112" Background="#155244" Foreground="White" FontWeight="Bold" FontSize="18" IsDefault="True"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Height="40" Width="112" Background="#155244" Foreground="White" FontWeight="Bold" FontSize="18" IsDefault="True"/>
         <TextBox HorizontalAlignment="Center" FontSize="20" Foreground="Gray" Grid.Row="2" Text="Username" TextAlignment="Center" VerticalAlignment="Center" Width="206" TextChanged="TextBox_TextChanged" Height="37"/>
         <TextBlock HorizontalAlignment="Center" Grid.Row="1" FontSize="20" Text="Admin User ID:" VerticalAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Grid.Row="3" FontSize="20" Text="Password:" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" Grid.Row="5" FontSize="20" Text="Test" VerticalAlignment="Center"/>
     </Grid>
 </Window>
