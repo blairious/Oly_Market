@@ -61,6 +61,9 @@
     <Compile Include="views\CreateCard1.xaml.cs">
       <DependentUpon>CreateCard1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="views\CreateCard2.xaml.cs">
+      <DependentUpon>CreateCard2.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="views\CreateCard1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\CreateCard2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
