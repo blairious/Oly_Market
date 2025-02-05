@@ -21,7 +21,18 @@ namespace AdminApp.views
     {
         public CreateCard2()
         {
+            DataContext = this;
             InitializeComponent();
+        }
+
+        private ulong _CardNum;
+        public ulong CardNum
+        {
+            get { return _CardNum; }
+            set
+            {
+                CardNum = 0;
+            }
         }
     }
 }
