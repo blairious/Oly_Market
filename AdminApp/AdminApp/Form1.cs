@@ -1,4 +1,5 @@
 using CozyHasher;
+using MySqlConnector;
 
 namespace AdminApp
 {
@@ -37,7 +38,7 @@ namespace AdminApp
                 return;
             }
 
-            
+            string HashedWords = hasher.MakeHash(userName, passWord);
         }
     }
 }
