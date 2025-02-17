@@ -1,5 +1,6 @@
 using CozyHasher;
 using MySqlConnector;
+using static ConnectionInfo;
 
 namespace AdminApp
 {
@@ -41,7 +42,9 @@ namespace AdminApp
 
 
             // Connection and data fetch for login.
-            using var connection = new MySqlConnection("Server=10.0.0.191;User ID=blair;Password=OlyMarketTest;Database=OlyMarketGC");
+            ConnectionInfo con = new ConnectionInfo();
+            string ConInfo = con.getCred();
+            using var connection = new MySqlConnection(ConInfo);
 
             connection.Open();
 
@@ -72,8 +75,6 @@ namespace AdminApp
             {
                 MessageBox.Show("Login credentials incorrect.");
             }
-
-
         }
     }
 }
