@@ -55,7 +55,7 @@
             LoginButton.FlatAppearance.BorderColor = Color.FromArgb(21, 82, 68);
             LoginButton.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             LoginButton.ForeColor = Color.White;
-            LoginButton.Location = new Point(58, 585);
+            LoginButton.Location = new Point(58, 575);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(235, 53);
             LoginButton.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(77, 360);
+            label1.Location = new Point(79, 360);
             label1.Name = "label1";
             label1.Size = new Size(194, 37);
             label1.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(101, 462);
+            label2.Location = new Point(109, 462);
             label2.Name = "label2";
             label2.Size = new Size(134, 37);
             label2.TabIndex = 3;

@@ -1,5 +1,4 @@
 using CozyHasher;
-using MySqlConnector;
 
 namespace AdminApp
 {
@@ -27,6 +26,8 @@ namespace AdminApp
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+
+            //Login syntax check. 
             if (userName == null || userName == "" || userName.Contains(' '))
             {
                 MessageBox.Show("Username missing or invalid.");
@@ -38,7 +39,10 @@ namespace AdminApp
                 return;
             }
 
-            string HashedWords = hasher.MakeHash(userName, passWord);
+            
+            
+
+
         }
     }
 }
