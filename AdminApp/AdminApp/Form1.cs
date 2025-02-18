@@ -6,7 +6,7 @@ namespace AdminApp
 {
     public partial class Form1 : Form
     {
-        private string userName;
+        public string userName;
         private string passWord;
         Hasher hasher = new Hasher();
 
@@ -69,7 +69,9 @@ namespace AdminApp
             
             if (AccessNow)
             {
-                MessageBox.Show("Login Successful!");
+                this.Hide();
+                MainWindow mainwin = new MainWindow();
+                mainwin.Show();
             }
             else
             {

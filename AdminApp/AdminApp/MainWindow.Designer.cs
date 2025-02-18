@@ -42,6 +42,8 @@
             AdjFunds = new Button();
             VendAcc = new Button();
             SignOut = new Button();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)LogoMain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -58,18 +60,18 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(297, 98);
+            textBox1.Location = new Point(874, 54);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(261, 23);
+            textBox1.Size = new Size(330, 23);
             textBox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { TransNum, CardNum, VendNum, TransDate, TransType, TransAmount });
-            dataGridView1.Location = new Point(297, 142);
+            dataGridView1.Location = new Point(297, 91);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(907, 534);
+            dataGridView1.Size = new Size(907, 646);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -163,12 +165,35 @@
             SignOut.TabIndex = 6;
             SignOut.Text = "Sign Out";
             SignOut.UseVisualStyleBackColor = false;
+            SignOut.Click += SignOut_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10F);
+            label1.Location = new Point(737, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(131, 19);
+            label1.TabIndex = 7;
+            label1.Text = "Lookup Transaction:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label2.Location = new Point(297, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(210, 30);
+            label2.TabIndex = 8;
+            label2.Text = "Transaction Ledger";
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1216, 749);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(SignOut);
             Controls.Add(VendAcc);
             Controls.Add(AdjFunds);
@@ -179,7 +204,6 @@
             MaximizeBox = false;
             Name = "MainWindow";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainWindow";
             ((System.ComponentModel.ISupportInitialize)LogoMain).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -201,5 +225,7 @@
         private Button AdjFunds;
         private Button VendAcc;
         private Button SignOut;
+        private Label label1;
+        private Label label2;
     }
 }
