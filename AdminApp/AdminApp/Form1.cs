@@ -53,8 +53,9 @@ namespace AdminApp
             string hashedWord = "";
             bool AccessNow = false;
             while (reader.Read())
+            {
                 hashedWord = reader.GetString(0);
-
+            }
             connection.Close();
 
             // Get boolean based on checking aquired hash and existence of user.

@@ -1,4 +1,6 @@
-﻿namespace AdminApp
+﻿using System.Data;
+
+namespace AdminApp
 {
     partial class MainWindow
     {
@@ -44,6 +46,7 @@
             SignOut = new Button();
             label1 = new Label();
             label2 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)LogoMain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -64,16 +67,15 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(330, 23);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { TransNum, CardNum, VendNum, TransDate, TransType, TransAmount });
             dataGridView1.Location = new Point(297, 91);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(907, 646);
             dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // TransNum
             // 
@@ -187,11 +189,24 @@
             label2.TabIndex = 8;
             label2.Text = "Transaction Ledger";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(21, 82, 68);
+            button1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(23, 470);
+            button1.Name = "button1";
+            button1.Size = new Size(241, 50);
+            button1.TabIndex = 9;
+            button1.Text = "Admin Accounts";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1216, 749);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(SignOut);
@@ -227,5 +242,6 @@
         private Button SignOut;
         private Label label1;
         private Label label2;
+        private Button button1;
     }
 }
