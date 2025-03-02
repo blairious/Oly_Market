@@ -36,7 +36,7 @@ namespace AdminApp
             }
             catch
             {
-               //no catches here.
+                //no catches here.
             }
             connection.Close();
 
@@ -72,7 +72,16 @@ namespace AdminApp
                     LoadData($" WHERE TransactionID = {AdminInput}");
                 }
             }
-            catch { }
+            catch
+            {
+                LoadData("");
+            }
+        }
+
+        private void CreateGiftCard_Click(object sender, EventArgs e)
+        {
+            AddCard newcard = new AddCard();
+            newcard.Show();
         }
     }
 }

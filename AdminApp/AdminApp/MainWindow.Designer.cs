@@ -131,6 +131,7 @@ namespace AdminApp
             CreateGiftCard.TabIndex = 3;
             CreateGiftCard.Text = "Create Gift Card";
             CreateGiftCard.UseVisualStyleBackColor = false;
+            CreateGiftCard.Click += CreateGiftCard_Click;
             // 
             // AdjFunds
             // 
