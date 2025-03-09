@@ -45,6 +45,7 @@
             textBox2.Size = new Size(228, 23);
             textBox2.TabIndex = 1;
             textBox2.TextAlign = HorizontalAlignment.Center;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label1
             // 
@@ -67,6 +68,7 @@
             CardAmount.TabIndex = 3;
             CardAmount.TextAlign = HorizontalAlignment.Center;
             CardAmount.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            CardAmount.ValueChanged += CardAmount_ValueChanged;
             // 
             // label2
             // 
@@ -99,6 +101,7 @@
             CreateCard.TabIndex = 6;
             CreateCard.Text = "Create Card";
             CreateCard.UseVisualStyleBackColor = false;
+            CreateCard.Click += CreateCard_Click;
             // 
             // Cancel
             // 

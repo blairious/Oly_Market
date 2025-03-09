@@ -51,11 +51,11 @@ namespace AdminApp
                 {
                     LoadData($" WHERE Date = '{AdminInput}'");
                 }
-                else if (AdminInput[0..3] == "212")
+                else if (AdminInput.Length == 10 && AdminInput[0] == '2')
                 {
                     LoadData($" WHERE CardID = {AdminInput}");
                 }
-                else if (AdminInput[0..2] == "47")
+                else if (AdminInput.Length == 8 && AdminInput[0] == '4')
                 {
                     LoadData($" WHERE VendorID = {AdminInput}");
                 }
