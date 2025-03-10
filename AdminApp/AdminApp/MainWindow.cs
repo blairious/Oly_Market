@@ -51,7 +51,7 @@ namespace AdminApp
                 {
                     LoadData($" WHERE Date = '{AdminInput}'");
                 }
-                else if (AdminInput.Length == 10 && AdminInput[0] == '2')
+                else if (AdminInput.Length == 10 && AdminInput[0] == '1')
                 {
                     LoadData($" WHERE CardID = {AdminInput}");
                 }
