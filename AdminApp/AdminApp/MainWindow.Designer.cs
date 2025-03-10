@@ -47,6 +47,7 @@ namespace AdminApp
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
+            refresh = new Button();
             ((System.ComponentModel.ISupportInitialize)LogoMain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -63,7 +64,7 @@ namespace AdminApp
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(874, 54);
+            textBox1.Location = new Point(763, 53);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(330, 23);
             textBox1.TabIndex = 1;
@@ -71,10 +72,9 @@ namespace AdminApp
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(297, 91);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(907, 646);
+            dataGridView1.Size = new Size(907, 617);
             dataGridView1.TabIndex = 2;
             // 
             // TransNum
@@ -174,7 +174,7 @@ namespace AdminApp
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(737, 58);
+            label1.Location = new Point(626, 57);
             label1.Name = "label1";
             label1.Size = new Size(131, 19);
             label1.TabIndex = 7;
@@ -202,11 +202,22 @@ namespace AdminApp
             button1.Text = "Admin Accounts";
             button1.UseVisualStyleBackColor = false;
             // 
+            // refresh
+            // 
+            refresh.Location = new Point(1129, 53);
+            refresh.Name = "refresh";
+            refresh.Size = new Size(75, 23);
+            refresh.TabIndex = 10;
+            refresh.Text = "Refresh";
+            refresh.UseVisualStyleBackColor = true;
+            refresh.Click += refresh_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1216, 749);
+            Controls.Add(refresh);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -244,5 +255,6 @@ namespace AdminApp
         private Label label1;
         private Label label2;
         private Button button1;
+        private Button refresh;
     }
 }
