@@ -48,6 +48,7 @@ namespace AdminApp
             label2 = new Label();
             button1 = new Button();
             refresh = new Button();
+            Print = new Button();
             ((System.ComponentModel.ISupportInitialize)LogoMain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -74,7 +75,7 @@ namespace AdminApp
             // 
             dataGridView1.Location = new Point(297, 91);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(907, 617);
+            dataGridView1.Size = new Size(907, 590);
             dataGridView1.TabIndex = 2;
             // 
             // TransNum
@@ -212,11 +213,22 @@ namespace AdminApp
             refresh.UseVisualStyleBackColor = true;
             refresh.Click += refresh_Click;
             // 
+            // Print
+            // 
+            Print.Location = new Point(1129, 708);
+            Print.Name = "Print";
+            Print.Size = new Size(75, 23);
+            Print.TabIndex = 11;
+            Print.Text = "Print";
+            Print.UseVisualStyleBackColor = true;
+            Print.Click += Print_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1216, 749);
+            Controls.Add(Print);
             Controls.Add(refresh);
             Controls.Add(button1);
             Controls.Add(label2);
@@ -256,5 +268,6 @@ namespace AdminApp
         private Label label2;
         private Button button1;
         private Button refresh;
+        private Button Print;
     }
 }

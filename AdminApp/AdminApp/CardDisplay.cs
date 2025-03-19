@@ -47,5 +47,23 @@ namespace AdminApp
         {
             this.Close();
         }
+
+        Bitmap bmp;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Graphics f = this.CreateGraphics();
+            bmp = new Bitmap(this.Size.Width - 200, this.Size.Height - 200, f);
+            Graphics g = Graphics.FromImage(bmp);
+            g.CopyFromScreen(this.Location.X + 50, this.Location.Y + 150, 0, 0, this.Size);
+            printPreviewDialog1.ShowDialog();
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp, 100, 100);
+        }
     }
 }

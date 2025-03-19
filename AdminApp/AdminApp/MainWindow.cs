@@ -18,6 +18,7 @@ namespace AdminApp
             Application.Restart();
         }
 
+        //Function that selects input data from DB
         private void LoadData(string type)
         {
             var con = new ConnectionInfo();
@@ -48,14 +49,27 @@ namespace AdminApp
 
         }
 
+        //Parses inputs and sends proper query. 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string AdminInput = ((TextBox)sender).Text;
             try
             {
-                if (AdminInput.Contains('-'))
+                if (AdminInput.Contains('/'))
                 {
-                    LoadData($" WHERE Date = '{AdminInput}'");
+                    string newdate = "";
+                    foreach (char c in AdminInput)
+                    {
+                        if (c == '/')
+                        {
+                            newdate += '-';
+                        }
+                        else if (char.IsDigit(c))
+                        {
+                            newdate += c;
+                        }
+                    }
+                    LoadData($" WHERE Date LIKE '%{newdate}%'");
                 }
                 else if (AdminInput.Length == 10 && AdminInput[0] == '1')
                 {
@@ -84,15 +98,22 @@ namespace AdminApp
             }
         }
 
+        //Button for creating new gift card.
         private void CreateGiftCard_Click(object sender, EventArgs e)
         {
             AddCard newcard = new AddCard();
             newcard.Show();
         }
 
+        //Refreshes table after data entry.
         private void refresh_Click(object sender, EventArgs e)
         {
             LoadData("");
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
