@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/AdminApp/AdminApp/ConnectionInfo.cs
