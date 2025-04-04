@@ -48,7 +48,8 @@ namespace AdminApp
 
             connection.Open();
 
-            using var command = new MySqlCommand($"SELECT Password FROM Admin_Accounts WHERE AdminID = {userName};", connection);
+            using var command = new MySqlCommand($"SELECT Password FROM Admin_Accounts WHERE AdminID = @AdminID;", connection);
+            command.Parameters.AddWithValue("@AdminID", userName);
             using var reader = command.ExecuteReader();
             string hashedWord = "";
             bool AccessNow = false;

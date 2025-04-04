@@ -48,7 +48,9 @@ namespace AdminApp
             {
 
                 connection.Open();
-                using var cmd = new MySqlCommand($"INSERT INTO Gift_Cards (Balance, VerifyName) VALUES ({Card_Amount}, '{Cust_Name}');", connection);
+                using var cmd = new MySqlCommand($"INSERT INTO Gift_Cards (Balance, VerifyName) VALUES (@Balance, @VerifyName);", connection);
+                cmd.Parameters.AddWithValue("@Balance", Card_Amount);
+                cmd.Parameters.AddWithValue("@VerifyName", Cust_Name);
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
