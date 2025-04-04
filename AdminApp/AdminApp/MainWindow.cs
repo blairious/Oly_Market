@@ -16,6 +16,7 @@ namespace AdminApp
 
         private void SignOut_Click(object sender, EventArgs e)
         {
+            GC.Collect();
             Application.Restart();
         }
 
@@ -56,7 +57,12 @@ namespace AdminApp
             string AdminInput = ((TextBox)sender).Text;
             try
             {
-                if (AdminInput.Contains('/'))
+                if (AdminInput.Contains(';') || AdminInput.Contains(')')) {
+                    MessageBox.Show("Injection attempt detected");
+                    GC.Collect();
+                    Application.Exit();
+                }
+                else if (AdminInput.Contains('/'))
                 {
                     string newdate = "";
                     foreach (char c in AdminInput)
@@ -72,13 +78,15 @@ namespace AdminApp
                     }
                     LoadData($" WHERE Date LIKE '%{newdate}%'");
                 }
-                else if (AdminInput.Length == 10 && AdminInput[0] == '1')
+                else if (AdminInput.Contains("card-"))
                 {
-                    LoadData($" WHERE CardID = {AdminInput}");
+                    int adnum = int.Parse(AdminInput[5..]);
+                    LoadData($" WHERE CardID LIKE {adnum}");
                 }
-                else if (AdminInput.Length == 8 && AdminInput[0] == '4')
+                else if (AdminInput.Contains("ven-"))
                 {
-                    LoadData($" WHERE VendorID = {AdminInput}");
+                    int adnum = int.Parse(AdminInput[4..]);
+                    LoadData($" WHERE VendorID LIKE {adnum}");
                 }
                 else if (AdminInput == "sale" || AdminInput == "card_fund" || AdminInput == "vendor_debit")
                 {
@@ -119,6 +127,7 @@ namespace AdminApp
 
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
+            GC.Collect();
             Application.Exit();
         }
     }
