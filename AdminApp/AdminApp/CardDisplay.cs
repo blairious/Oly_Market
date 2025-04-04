@@ -15,20 +15,21 @@ namespace AdminApp
     public partial class CardDisplay : Form
     {
         private string _name;
-        private double _amount;
+        private decimal _amount;
         private int _cardnum;
-        public CardDisplay(string name, double amount, int cardnum)
+        public CardDisplay(string name, decimal amount, int cardnum)
         {
             InitializeComponent();
             _name = name;
             _amount = amount;
             _cardnum = cardnum;
             label4.Text = $"{_cardnum}";
-            label5.Text = $"{_amount}";
+            label5.Text = $"${_amount}";
             label6.Text = $"{_name}";
             GenerateCode(_cardnum);
         }
 
+        //Generates QR code Bitmap based on entered info
         private void GenerateCode(int CardNum)
         {
             QrCode qr = QrCode.EncodeText($"{CardNum}", QrCode.Ecc.Medium);
@@ -48,22 +49,25 @@ namespace AdminApp
             this.Close();
         }
 
+        //Print button functionality
         Bitmap bmp;
 
         private void button1_Click(object sender, EventArgs e)
         {
 
             Graphics f = this.CreateGraphics();
-            bmp = new Bitmap(this.Size.Width - 200, this.Size.Height - 200, f);
+            bmp = new Bitmap(this.Size.Width - 50, this.Size.Height - 300, f);
             Graphics g = Graphics.FromImage(bmp);
-            g.CopyFromScreen(this.Location.X + 50, this.Location.Y + 150, 0, 0, this.Size);
+            g.CopyFromScreen(this.Location.X + 10, this.Location.Y + 30, 0, 0, this.Size);
             printPreviewDialog1.ShowDialog();
 
         }
 
+        //Setup for print dialog and page layout.
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawImage(bmp, 100, 100);
+            e.Graphics.DrawImage(bmp, 25, 10);
         }
+
     }
 }

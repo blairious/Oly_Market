@@ -59,5 +59,15 @@ namespace AdminApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oly_Market_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Oly_Market_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace AdminApp
 {
     public partial class AddCard : Form
     {
-        public double Card_Amount = 10.00;
+        public decimal Card_Amount = (decimal)10.00;
         public string Cust_Name = null;
         public int Card_Num;
 
@@ -23,7 +23,7 @@ namespace AdminApp
 
         private void CardAmount_ValueChanged(object sender, EventArgs e)
         {
-            Card_Amount = (float)((NumericUpDown)sender).Value;
+            Card_Amount = (decimal)((NumericUpDown)sender).Value;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace AdminApp
 
             //Writes the transaction to the main ledger.
             Ledg_Update Writer = new Ledg_Update();
-            Card_Num = Writer.Write_Ledger("New Card", Card_Amount);
+            Card_Num = Writer.Write_Ledger("New Card", (double)Card_Amount);
 
             //Create new form with code, card info, and option to print.
             CardDisplay createdCard = new CardDisplay(Cust_Name, Card_Amount, Card_Num);
