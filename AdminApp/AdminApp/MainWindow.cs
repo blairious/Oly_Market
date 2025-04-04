@@ -10,6 +10,7 @@ namespace AdminApp
         public MainWindow()
         {
             InitializeComponent();
+            this.FormClosed += MainWindow_FormClosed;
             LoadData("");
         }
 
@@ -114,6 +115,11 @@ namespace AdminApp
         private void Print_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
