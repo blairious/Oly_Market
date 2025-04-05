@@ -41,7 +41,7 @@ namespace AdminApp
             TransType = new DataGridViewTextBoxColumn();
             TransAmount = new DataGridViewTextBoxColumn();
             CreateGiftCard = new Button();
-            AdjFunds = new Button();
+            CardAccounts = new Button();
             VendAcc = new Button();
             SignOut = new Button();
             label1 = new Label();
@@ -134,17 +134,18 @@ namespace AdminApp
             CreateGiftCard.UseVisualStyleBackColor = false;
             CreateGiftCard.Click += CreateGiftCard_Click;
             // 
-            // AdjFunds
+            // CardAccounts
             // 
-            AdjFunds.BackColor = Color.FromArgb(21, 82, 68);
-            AdjFunds.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            AdjFunds.ForeColor = Color.White;
-            AdjFunds.Location = new Point(23, 324);
-            AdjFunds.Name = "AdjFunds";
-            AdjFunds.Size = new Size(241, 50);
-            AdjFunds.TabIndex = 4;
-            AdjFunds.Text = "Adjust Funds";
-            AdjFunds.UseVisualStyleBackColor = false;
+            CardAccounts.BackColor = Color.FromArgb(21, 82, 68);
+            CardAccounts.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            CardAccounts.ForeColor = Color.White;
+            CardAccounts.Location = new Point(23, 324);
+            CardAccounts.Name = "CardAccounts";
+            CardAccounts.Size = new Size(241, 50);
+            CardAccounts.TabIndex = 4;
+            CardAccounts.Text = "Card Accounts";
+            CardAccounts.UseVisualStyleBackColor = false;
+            CardAccounts.Click += CardAccounts_Click;
             // 
             // VendAcc
             // 
@@ -157,6 +158,7 @@ namespace AdminApp
             VendAcc.TabIndex = 5;
             VendAcc.Text = "Vendor Accounts";
             VendAcc.UseVisualStyleBackColor = false;
+            VendAcc.Click += VendAcc_Click;
             // 
             // SignOut
             // 
@@ -184,10 +186,10 @@ namespace AdminApp
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label2.Location = new Point(297, 9);
             label2.Name = "label2";
-            label2.Size = new Size(210, 30);
+            label2.Size = new Size(261, 37);
             label2.TabIndex = 8;
             label2.Text = "Transaction Ledger";
             // 
@@ -202,6 +204,7 @@ namespace AdminApp
             button1.TabIndex = 9;
             button1.Text = "Admin Accounts";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // refresh
             // 
@@ -235,7 +238,7 @@ namespace AdminApp
             Controls.Add(label1);
             Controls.Add(SignOut);
             Controls.Add(VendAcc);
-            Controls.Add(AdjFunds);
+            Controls.Add(CardAccounts);
             Controls.Add(CreateGiftCard);
             Controls.Add(dataGridView1);
             Controls.Add(textBox1);
@@ -261,7 +264,7 @@ namespace AdminApp
         private DataGridViewTextBoxColumn TransType;
         private DataGridViewTextBoxColumn TransAmount;
         private Button CreateGiftCard;
-        private Button AdjFunds;
+        private Button CardAccounts;
         private Button VendAcc;
         private Button SignOut;
         private Label label1;

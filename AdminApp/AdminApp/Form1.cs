@@ -59,6 +59,13 @@ namespace AdminApp
             }
             connection.Close();
 
+            //Check if account is a suspended account.
+            if (hashedWord == "sus")
+            {
+                MessageBox.Show("Account has been suspended. Please contact administrator.");
+                return;
+            }
+            
             // Get boolean based on checking aquired hash and existence of user.
             try
             {

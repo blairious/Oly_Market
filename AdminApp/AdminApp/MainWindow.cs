@@ -58,11 +58,9 @@ namespace AdminApp
             try
             {
                 //The first conditional checks if characters that would only be used in injection attacks are present.
-                //If the first condition is true it cleans memory and shuts down the program. 
-                if (AdminInput.Contains(';') || AdminInput.Contains(')')) {
-                    MessageBox.Show("Injection attempt detected");
-                    GC.Collect();
-                    Application.Exit();
+                if (AdminInput.Contains(';') || AdminInput.Contains(')'))
+                {
+                    textBox1.Clear();
                 }
                 else if (AdminInput.Contains('/'))
                 {
@@ -84,14 +82,14 @@ namespace AdminApp
                 else if (AdminInput.Contains("card-"))
                 {
                     int adnum = int.Parse(AdminInput[5..]);
-                    LoadData($" WHERE CardID LIKE {adnum}");
+                    LoadData($" WHERE CardID = {adnum}");
                 }
 
                 //Checks to see if user wants to access a vendor number
                 else if (AdminInput.Contains("ven-"))
                 {
                     int adnum = int.Parse(AdminInput[4..]);
-                    LoadData($" WHERE VendorID LIKE {adnum}");
+                    LoadData($" WHERE VendorID = {adnum}");
                 }
                 else if (AdminInput == "sale" || AdminInput == "card_fund" || AdminInput == "vendor_debit")
                 {
@@ -126,15 +124,32 @@ namespace AdminApp
             LoadData("");
         }
 
+        //TODO: Print all info from dataGridView1
         private void Print_Click(object sender, EventArgs e)
         {
 
         }
 
+        //Ensures application termination and trash collection on window close.
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             GC.Collect();
             Application.Exit();
+        }
+
+        private void CardAccounts_Click(object sender, EventArgs e)
+        {
+            //TODO: open new window for card asset management.
+        }
+
+        private void VendAcc_Click(object sender, EventArgs e)
+        {
+            //TODO: Open a window to pay vendor balances, suspend, add, or delete accounts.
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //TODO: Open a window to add, suspend, delete admin accounts. 
         }
     }
 }
