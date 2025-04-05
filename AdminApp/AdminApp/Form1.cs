@@ -40,7 +40,6 @@ namespace AdminApp
                 return;
             }
 
-
             // Connection and data fetch for login.
             ConnectionInfo con = new ConnectionInfo();
             string ConInfo = con.getCred();
