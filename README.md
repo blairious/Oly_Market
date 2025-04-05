@@ -41,3 +41,15 @@ The customer facing application is very limitted in database access, as it can b
 * Display a QR code.
 
 For advanced actions like adding funds, purchasing a gift card, or disputing a purchase, the customer will have to contact the main office for administrative action. 
+
+## Admin Application - User Guide
+This application is currently in development.
+//TODO
+
+## Vendor Application - User Guide
+Not yet in development
+//TODO
+
+## Customer Application - User Guide
+Not yet in development
+//TODO
