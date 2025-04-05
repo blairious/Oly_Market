@@ -57,6 +57,8 @@ namespace AdminApp
             string AdminInput = ((TextBox)sender).Text;
             try
             {
+                //The first conditional checks if characters that would only be used in injection attacks are present.
+                //If the first condition is true it cleans memory and shuts down the program. 
                 if (AdminInput.Contains(';') || AdminInput.Contains(')')) {
                     MessageBox.Show("Injection attempt detected");
                     GC.Collect();
@@ -78,11 +80,14 @@ namespace AdminApp
                     }
                     LoadData($" WHERE Date LIKE '%{newdate}%'");
                 }
+                //Checks to see if user wants to access a card number
                 else if (AdminInput.Contains("card-"))
                 {
                     int adnum = int.Parse(AdminInput[5..]);
                     LoadData($" WHERE CardID LIKE {adnum}");
                 }
+
+                //Checks to see if user wants to access a vendor number
                 else if (AdminInput.Contains("ven-"))
                 {
                     int adnum = int.Parse(AdminInput[4..]);
@@ -96,6 +101,7 @@ namespace AdminApp
                 {
                     LoadData($" WHERE Amount = {AdminInput}");
                 }
+                //Assuming no other conditions are met, program assumes that user is trying to find a transaction by number.
                 else
                 {
                     LoadData($" WHERE TransactionID = {AdminInput}");
