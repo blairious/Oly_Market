@@ -32,7 +32,7 @@
             textBox1 = new TextBox();
             balLabel = new Label();
             verName = new Label();
-            custBallance = new Label();
+            custBalance = new Label();
             custName = new Label();
             amntAddSub = new NumericUpDown();
             button1 = new Button();
@@ -80,14 +80,14 @@
             verName.TabIndex = 3;
             verName.Text = "Name on Card:";
             // 
-            // custBallance
+            // custBalance
             // 
-            custBallance.AutoSize = true;
-            custBallance.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            custBallance.Location = new Point(205, 220);
-            custBallance.Name = "custBallance";
-            custBallance.Size = new Size(0, 30);
-            custBallance.TabIndex = 4;
+            custBalance.AutoSize = true;
+            custBalance.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            custBalance.Location = new Point(205, 220);
+            custBalance.Name = "custBalance";
+            custBalance.Size = new Size(0, 30);
+            custBalance.TabIndex = 4;
             // 
             // custName
             // 
@@ -156,7 +156,7 @@
             Controls.Add(button1);
             Controls.Add(amntAddSub);
             Controls.Add(custName);
-            Controls.Add(custBallance);
+            Controls.Add(custBalance);
             Controls.Add(verName);
             Controls.Add(balLabel);
             Controls.Add(textBox1);
@@ -174,7 +174,7 @@
         private TextBox textBox1;
         private Label balLabel;
         private Label verName;
-        private Label custBallance;
+        private Label custBalance;
         private Label custName;
         private NumericUpDown amntAddSub;
         private Button button1;

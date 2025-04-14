@@ -137,9 +137,11 @@ namespace AdminApp
             Application.Exit();
         }
 
+        //Opens new window for card asset management.
         private void CardAccounts_Click(object sender, EventArgs e)
         {
-            //TODO: open new window for card asset management.
+            CardManagement cardManagement = new CardManagement();
+            cardManagement.Show();
         }
 
         private void VendAcc_Click(object sender, EventArgs e)

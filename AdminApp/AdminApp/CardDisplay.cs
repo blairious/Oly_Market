@@ -46,6 +46,7 @@ namespace AdminApp
 
         private void Close_Click(object sender, EventArgs e)
         {
+            GC.Collect();
             this.Close();
         }
 
