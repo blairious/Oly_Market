@@ -1,12 +1,11 @@
 using CozyHasher;
 using MySqlConnector;
-using static ConnectionInfo;
 
 namespace AdminApp
 {
     public partial class Form1 : Form
     {
-        public string userName;
+        public static string userName;
         private string passWord;
         Hasher hasher = new Hasher();
 

@@ -35,7 +35,7 @@
             custBalance = new Label();
             custName = new Label();
             amntAddSub = new NumericUpDown();
-            button1 = new Button();
+            changeAmntBtn = new Button();
             ReprintCard = new Button();
             Close = new Button();
             ((System.ComponentModel.ISupportInitialize)amntAddSub).BeginInit();
@@ -110,15 +110,15 @@
             amntAddSub.TextAlign = HorizontalAlignment.Center;
             amntAddSub.ValueChanged += amntAddSub_ValueChanged;
             // 
-            // button1
+            // changeAmntBtn
             // 
-            button1.Location = new Point(313, 256);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 23);
-            button1.TabIndex = 7;
-            button1.Text = "Change Amount";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            changeAmntBtn.Location = new Point(313, 256);
+            changeAmntBtn.Name = "changeAmntBtn";
+            changeAmntBtn.Size = new Size(120, 23);
+            changeAmntBtn.TabIndex = 7;
+            changeAmntBtn.Text = "Change Amount";
+            changeAmntBtn.UseVisualStyleBackColor = true;
+            changeAmntBtn.Click += changeAmntBtn_Click;
             // 
             // ReprintCard
             // 
@@ -153,7 +153,7 @@
             ClientSize = new Size(491, 473);
             Controls.Add(Close);
             Controls.Add(ReprintCard);
-            Controls.Add(button1);
+            Controls.Add(changeAmntBtn);
             Controls.Add(amntAddSub);
             Controls.Add(custName);
             Controls.Add(custBalance);
@@ -177,7 +177,7 @@
         private Label custBalance;
         private Label custName;
         private NumericUpDown amntAddSub;
-        private Button button1;
+        private Button changeAmntBtn;
         private Button ReprintCard;
         private Button Close;
     }
