@@ -25,21 +25,18 @@ namespace AdminApp
             connection.Close();
             return cardnum;
         }
-        //Writes a ledger entry to reflect a non transaction change.
+        //Writes a ledger entry to reflect a non-transaction balance change.
         public void Rebalance(int cardnum, double amount) 
         {
             ConnectionInfo con = new ConnectionInfo();
             string ConInfo = con.getCred();
             using var connection = new MySqlConnection(ConInfo);
-            string adminNum = Form1.userName; 
+            string adminNum = Form1.userName;
             connection.Open();
-            using (var command = new MySqlCommand($"SELECT * FROM Gift_Cards WHERE CardNum = {cardnum};", connection))
-            using (var reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                    cardnum = reader.GetInt32(0);
-            }
-            using var cmd = new MySqlCommand($"INSERT INTO Main_Ledger (CardID, VendorID, Amount, Tran_Type) VALUES ({cardnum}, {adminNum}, {amount}, 'Rebalance');", connection);
+         
+            using var cmd = new MySqlCommand($"INSERT INTO Main_Ledger (CardID, Amount, Tran_Type) VALUES ({cardnum}, {amount}, 'Rebalance Admin: {adminNum}');", connection);
+            cmd.ExecuteNonQuery();
+
             connection.Close();
         }
     }
