@@ -200,6 +200,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            StartPosition = FormStartPosition.CenterScreen;
             Name = "CardDisplay";
             Text = "CardDisplay";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

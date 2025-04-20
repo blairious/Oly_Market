@@ -161,6 +161,7 @@
             Controls.Add(balLabel);
             Controls.Add(textBox1);
             Controls.Add(cardnumlabel);
+            StartPosition = FormStartPosition.CenterScreen;
             Name = "CardManagement";
             Text = "Card Management";
             ((System.ComponentModel.ISupportInitialize)amntAddSub).EndInit();

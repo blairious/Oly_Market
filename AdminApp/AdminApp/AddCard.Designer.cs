@@ -129,6 +129,7 @@
             Controls.Add(label1);
             Controls.Add(textBox2);
             Name = "AddCard";
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)CardAmount).EndInit();
             ResumeLayout(false);
             PerformLayout();
