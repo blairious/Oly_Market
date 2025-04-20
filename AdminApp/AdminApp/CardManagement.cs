@@ -51,6 +51,14 @@ namespace AdminApp
                 int FinalNum = int.Parse(CardNum);
                 screenUpdate(FinalNum);
             }
+            else
+            {
+                cust_name = "";
+                card_amount = 0;
+                card_id = 0;
+                screenUpdate(card_id);
+            }
+
         }
 
         //Changes the amount to add or subtract from the gift card. 
@@ -78,8 +86,11 @@ namespace AdminApp
 
                 //Writes the transaction to the main ledger and updates screen.
                 Ledg_Update Writer = new Ledg_Update();
-
                 Writer.Rebalance(card_id, (double)change_amount);
+
+                //Confirmation of change message. A messure to stop accidental double-clicking. 
+                MessageBox.Show("Rebalance complete.");
+
                 screenUpdate(card_id);
             }
             else if (card_amount + change_amount < 0)
@@ -94,7 +105,16 @@ namespace AdminApp
 
         private void screenUpdate(int cardnum)
         {
+            //Checks if the call is for updating a bad entry before completing method.
+            if (cardnum == 0)
+            {
+                custBalance.Text = "";
+                custName.Text = "";
+                card_active = false;
+                return;
+            }
 
+            //Sets up a connection
             var con = new ConnectionInfo();
             string Coninfo = con.getCred();
             using var connection = new MySqlConnection(Coninfo);

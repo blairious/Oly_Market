@@ -1,17 +1,17 @@
-﻿using static ConnectionInfo;
-using MySqlConnector;
+﻿using MySqlConnector;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 
 namespace AdminApp
 {
     public partial class MainWindow : Form
     {
+        public string ThisMonth = DateTime.Now.ToString("yyyy-MM");
         public MainWindow()
         {
             InitializeComponent();
             this.FormClosed += MainWindow_FormClosed;
-            LoadData("");
+            LoadData($" WHERE Date LIKE '%{ThisMonth}%'");
         }
 
         private void SignOut_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace AdminApp
             }
             catch
             {
-                LoadData("");
+                LoadData($" WHERE Date LIKE '%{ThisMonth}%'");
             }
         }
 
@@ -121,7 +121,7 @@ namespace AdminApp
         //Refreshes table after data entry.
         private void refresh_Click(object sender, EventArgs e)
         {
-            LoadData("");
+            LoadData($" WHERE Date LIKE '%{ThisMonth}%'");
         }
 
         //TODO: Print all info from dataGridView1
