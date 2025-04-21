@@ -50,6 +50,8 @@ After opening the Admin Application, a user will be prompted to enter their admi
 ### Main Window
 After a successful login, the active administrator's number will be kept as the user is navigated to the main window. The window acts as a hub and will terminate the program if closed.
 
+![Image of the main ledger](https://github.com/blairious/Oly_Market/blob/main/mainledger.jpg)
+
 #### Main Ledger
 The largest part of the main window is a data grid that gives the user access to the main ledger; the database where all transactions are recorded. As a default, only data from the current month is loaded when first openned or when refreshed. The main ledger can be reloaded at any time by the 'refresh' button in the top right corner.
 
