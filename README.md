@@ -43,8 +43,33 @@ The customer facing application is very limitted in database access, as it can b
 For advanced actions like adding funds, purchasing a gift card, or disputing a purchase, the customer will have to contact the main office for administrative action. 
 
 ## Admin Application - User Guide
-This application is currently in development.
-//TODO
+
+### Login
+After opening the Admin Application, a user will be prompted to enter their admin id number and password. Should the user have missing or invalid credentials he or she will be alerted that fact. If the account the user is trying to access is flagged as suspended, a unique prompt will alert the user to this case and instruct them to contact another admin.
+
+### Main Window
+After a successful login, the active administrator's number will be kept as the user is navigated to the main window. The window acts as a hub and will terminate the program if closed.
+
+#### Main Ledger
+The largest part of the main window is a data grid that gives the user access to the main ledger; the database where all transactions are recorded. As a default, only data from the current month is loaded when first openned or when refreshed. The main ledger can be reloaded at any time by the 'refresh' button in the top right corner.
+
+#### Dynamic Search Bar
+The search bar is used for fine-tuned queries of the main ledger. Located next to the 'refresh' button, editting data will filter the results seen on the main ledger. By default the bar is set to look for transaction numbers via entered integers, however there other search criteria can be called as follows:
+
+* ```ven-``` preceding a number searches for transactions by vendor number.
+* ```card-``` is similar to the vendor lookup but searches by card number.
+* ```yyyy/mm/dd``` searches transactions by date. This one will refine as the user types, starting with the year, then month, then day until the user finds the transaction they're is looking for.
+* The search can also look based on transaction type: New Card, Rebalance, Sale.
+
+### Create Gift Card
+On the left side of the main window, below the logo is a 'Create Gift Card' button. This button opens a new, smaller window, that prompts an admin to add a first name and amount to add, in order to generate a new card. The ammount cannot be lower then 10 or higher than 2000, but the amount can be altered later. Once the correct information has been entered, a card will be created and window will open allowing the card to be printed, should the customer not have access to the mobile application. 
+
+### Card Accounts
+Below the 'Create Gift Card' button is a button labelled: 'Card Accounts.' This button opens a window that allows administrators to query accounts, reprint gift cards, and, most importantly, change the amount on any given chosen card. 
+
+To find a card, the administrator can simply type a card number into the text field. Once a matching card is found, the name and balance on the card will appear. A reprint button is always present, for easy reprinting once a card is selected. 
+
+Next to the card's current balance, a field can be changed in the negative or positive to determine the amount that should be added or taken away from the balance. Once an amount is entered, the small button below the field will change the balance by the entered amount. This change will be reflected immediately in the displayed balance, and will be recorded on the main ledger as a 'Rebalance' and will include the number of the admin who performed it. 
 
 ## Vendor Application - User Guide
 Not yet in development
