@@ -54,7 +54,7 @@
             label1.Location = new Point(98, 22);
             label1.Name = "label1";
             label1.Size = new Size(214, 47);
-            label1.TabIndex = 2;
+            label1.TabIndex = 3;
             label1.Text = "Create Card";
             // 
             // CardAmount
@@ -65,7 +65,7 @@
             CardAmount.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             CardAmount.Name = "CardAmount";
             CardAmount.Size = new Size(141, 23);
-            CardAmount.TabIndex = 3;
+            CardAmount.TabIndex = 2;
             CardAmount.TextAlign = HorizontalAlignment.Center;
             CardAmount.Value = new decimal(new int[] { 10, 0, 0, 0 });
             CardAmount.ValueChanged += CardAmount_ValueChanged;

@@ -16,5 +16,11 @@ namespace AdminApp
         {
             InitializeComponent();
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            GC.Collect();
+            this.Close();
+        }
     }
 }

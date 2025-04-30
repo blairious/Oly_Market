@@ -28,12 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AdminAccounts";
+            CloseButton = new Button();
+            textBox1 = new TextBox();
+            SuspendLayout();
+            // 
+            // CloseButton
+            // 
+            CloseButton.BackColor = Color.FromArgb(21, 82, 68);
+            CloseButton.FlatAppearance.BorderColor = Color.FromArgb(21, 82, 68);
+            CloseButton.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            CloseButton.ForeColor = Color.White;
+            CloseButton.Location = new Point(282, 749);
+            CloseButton.Name = "CloseButton";
+            CloseButton.Size = new Size(235, 53);
+            CloseButton.TabIndex = 2;
+            CloseButton.Text = "Close";
+            CloseButton.UseVisualStyleBackColor = false;
+            CloseButton.Click += CloseButton_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(58, 111);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(339, 23);
+            textBox1.TabIndex = 3;
+            // 
+            // AdminAccounts
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 814);
+            Controls.Add(textBox1);
+            Controls.Add(CloseButton);
+            Name = "AdminAccounts";
+            Text = "AdminAccounts";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button CloseButton;
+        private TextBox textBox1;
     }
 }

@@ -151,7 +151,8 @@ namespace AdminApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //TODO: Open a window to add, suspend, delete admin accounts. 
+            AdminAccounts adminAccounts = new AdminAccounts();
+            adminAccounts.Show();
         }
     }
 }
